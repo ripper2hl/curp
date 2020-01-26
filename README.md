@@ -1,20 +1,26 @@
 # curp [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > Genera y valida el CURP (Clave Única de Registro de Población) mexicano.
 
-## Installation
+## Instalación
 
 ```sh
 $ npm install --save curp
 ```
 
-## Usage
+## Uso
 
 ```js
 const curp = require('curp');
-
-curp('Rainbow');
+let persona = curp.getPersona();
+persona.nombre = 'Andrés Manuel';
+persona.apellidoPaterno = 'López';
+persona.apellidoMaterno = 'Obrador';
+persona.genero = curp.GENERO.MASCULINO;
+persona.fechaNacimiento = '13-11-1953';
+persona.estado = curp.ESTADO.TABASCO;
+console.log( curp.generar(persona) ); //LOOA531113HTCPBN07
 ```
-## License
+## Licencia
 
 GPL-3.0 © [Israel Perales](https://www.ingenieroperales.com)
 
