@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Israel Perales",
+      "authorEmail": "israel-perales@outlook.com",
+      "authorUrl": "https://www.ingenieroperales.com"
+    }
+  }
+}
