@@ -64,7 +64,7 @@
   },
   "scripts": {
     "pretest": "eslint . --fix",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": "ripper2hl/curp",
   "jest": {
