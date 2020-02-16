@@ -7,8 +7,9 @@
 $ npm install --save curp
 ```
 
-## Uso
+## Uso:
 
+### Nodejs.
 ```js
 const curp = require('curp');
 let persona = curp.getPersona();
@@ -20,6 +21,35 @@ persona.fechaNacimiento = '13-11-1953';
 persona.estado = curp.ESTADO.TABASCO;
 console.log( curp.generar(persona) ); //LOOA531113HTCPBN07
 ```
+
+### Angular.
+
+```js
+import { Component } from '@angular/core';
+import curp from 'curp';
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = testCurp();
+}
+
+
+function testCurp() {
+  let persona = curp.getPersona();
+  persona.nombre = 'Andrés Manuel';
+  persona.apellidoPaterno = 'López';
+  persona.apellidoMaterno = 'Obrador';
+  persona.genero = curp.GENERO.MASCULINO;
+  persona.fechaNacimiento = '13-11-1953';
+  persona.estado = curp.ESTADO.TABASCO;
+  console.log( curp.generar(persona) );
+  return curp.generar(persona);
+}
+```
+
 ## Licencia
 
 GPL-3.0 © [Israel Perales](https://www.ingenieroperales.com)
