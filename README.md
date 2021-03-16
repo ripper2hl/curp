@@ -52,7 +52,7 @@ function testCurp() {
 
 ## Licencia
 
-GPL-3.0 © [Israel Perales](https://www.ingenieroperales.com)
+GPL-3.0 © [Israel Perales](https://www.israel-perales.com)
 
 
 [npm-image]: https://badge.fury.io/js/curp.svg
