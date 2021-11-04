@@ -10,6 +10,15 @@ $ npm install --save curp
 ## Uso:
 
 ### Nodejs.
+
+#### Validar
+
+```js
+const curp = require('curp');
+console.log( curp.validar('LOOA531113HTCPBN07') ); //true
+```
+#### Generar
+
 ```js
 const curp = require('curp');
 let persona = curp.getPersona();
@@ -47,6 +56,10 @@ function testCurp() {
   persona.estado = curp.ESTADO.TABASCO;
   console.log( curp.generar(persona) );
   return curp.generar(persona);
+}
+
+function validarCurp(curpString) {
+  return curp.validar(curpString);
 }
 ```
 
