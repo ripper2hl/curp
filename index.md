@@ -1,3 +1,4 @@
+<script src="https://bundle.run/curp"></script>
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/ripper2hl/curp/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
