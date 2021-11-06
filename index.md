@@ -1,30 +1,29 @@
 <script src="https://bundle.run/curp"></script>
 ## Valida
 
-<input id="validarCurp" type="text"></input>
-<input id="validarBoton" type="button" value="Validar" ></input>
+<input id="validarCurp" type="text" />
+<input id="validarBoton" type="button " value="Validar" />
 
 ### Genera
 **Bold**
-<input id="nombre" type="text"></input>
+<input id="nombre" type="text"/>
 
 **Bold**
-<input id="apellidoMaterno" type="text"></input>
+<input id="apellidoMaterno" type="text" />
 
 **Bold**
-<input id="apellidoPaterno" type="text"></input>
+<input id="apellidoPaterno" type="text" />
 
 **Bold**
-<input id="estado" type="text"></input>
+<input id="estado" type="text" />
+**Bold**
+<input id="fechaNacimiento" type="date" />
 
 **Bold**
-<input id="fechaNacimiento" type="date"></input>
+<input id="sexo" type="date" />
 
 **Bold**
-<input id="sexo" type="date"></input>
-
-**Bold**
-<input id="GenerarBoton" type="button"
+<input id="GenerarBoton" type="button" />
 
 ```markdown
 Syntax highlighted code block
