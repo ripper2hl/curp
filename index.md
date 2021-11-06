@@ -1,13 +1,30 @@
 <script src="https://bundle.run/curp"></script>
-## Welcome to GitHub Pages
+## Valida
 
-You can use the [editor on GitHub](https://github.com/ripper2hl/curp/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<input id="validarCurp" type="text"></input>
+<input id="validarBoton" type="button" value="Validar" ></input>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Genera
+**Bold**
+<input id="nombre" type="text"></input>
 
-### Markdown
+**Bold**
+<input id="apellidoMaterno" type="text"></input>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+**Bold**
+<input id="apellidoPaterno" type="text"></input>
+
+**Bold**
+<input id="estado" type="text"></input>
+
+**Bold**
+<input id="fechaNacimiento" type="date"></input>
+
+**Bold**
+<input id="sexo" type="date"></input>
+
+**Bold**
+<input id="GenerarBoton" type="button"
 
 ```markdown
 Syntax highlighted code block
