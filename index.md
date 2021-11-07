@@ -13,7 +13,6 @@ var validarBoton = document.getElementById("validarBoton");
 
 validarBoton.addEventListener("click", function(evt) {
     evt.preventDefault();
-    alert(validarCurp.value);
     alert(curp.validar(validarCurp.value));
 });
 </script>
