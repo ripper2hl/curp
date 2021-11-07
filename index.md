@@ -5,24 +5,24 @@
 <input id="validarBoton" type="button " value="Validar" />
 
 ### Genera
-**Bold**
+**Nombre**
 <input id="nombre" type="text"/>
 
-**Bold**
-<input id="apellidoMaterno" type="text" />
-
-**Bold**
+**Apellido paterno**
 <input id="apellidoPaterno" type="text" />
 
-**Bold**
+**Apellido materno**
+<input id="apellidoMaterno" type="text" />
+
+**Estado**
 <input id="estado" type="text" />
-**Bold**
+
+**Fecha de nacimiento**
 <input id="fechaNacimiento" type="date" />
 
-**Bold**
-<input id="sexo" type="date" />
+**Sexo**
+<input id="sexo" type="checkbox" />
 
-**Bold**
 <input id="GenerarBoton" type="button" />
 
 ```markdown
