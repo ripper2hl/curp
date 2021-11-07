@@ -1,8 +1,22 @@
 <script src="https://bundle.run/curp"></script>
 ## Valida
 
+**CURP:**
 <input id="validarCurp" type="text" />
-<input id="validarBoton" type="button " value="Validar" />
+
+<input id="validarBoton" type="button" value="Validar" />
+
+<script >
+var validarCurp = document.getElementById("validarCurp");
+
+var validarBoton = document.getElementById("validarBoton");
+
+validarBoton.addEventListener("click", function(evt) {
+    evt.preventDefault();
+    alert(validarCurp.value);
+    alert(curp.validar(validarCurp.value));
+});
+</script>
 
 ### Genera
 **Nombre**
