@@ -66,6 +66,62 @@ function validarCurp(curpString) {
 }
 ```
 
+### Fecha
+
+```js
+let persona = curp.getPersona();
+//Formato DD-MM-YYYY
+persona.fechaNacimiento = '13-11-1953';
+```
+
+### Constantes
+
+#### Genero 
+
+```js
+curp.GENERO.MASCULINO
+curp.GENERO.FEMENINO
+```
+
+#### Estados
+```js
+curp.ESTADO.TABASCO;
+curp.ESTADO.AGUASCALIENTES;
+curp.ESTADO.BAJA_CALIFORNIA;
+curp.ESTADO.BAJA_CALIFORNIA_SUR;
+curp.ESTADO.CAMPECHE;
+curp.ESTADO.COAHUILA;
+curp.ESTADO.COLIMA;
+curp.ESTADO.CHIAPAS;
+curp.ESTADO.CHIHUAHUA;
+curp.ESTADO.DISTRITO_FEDERAL;
+curp.ESTADO.CDMX;
+curp.ESTADO.DURANGO;
+curp.ESTADO.GUANAJUATO;
+curp.ESTADO.GUERRERO;
+curp.ESTADO.HIDALGO;
+curp.ESTADO.JALISCO;
+curp.ESTADO.ESTADO_DE_MEXICO;
+curp.ESTADO.NO_ESPECIFICADO;
+curp.ESTADO.MICHOACAN;
+curp.ESTADO.MORELOS;
+curp.ESTADO.NAYARIT;
+curp.ESTADO.NUEVO_LEON;
+curp.ESTADO.OAXACA;
+curp.ESTADO.PUEBLA;
+curp.ESTADO.QUERETARO;
+curp.ESTADO.QUINTANA_ROO;
+curp.ESTADO.SAN_LUIS_POTOSI;
+curp.ESTADO.SINALOA;
+curp.ESTADO.SONORA;
+curp.ESTADO.TABASCO;
+curp.ESTADO.TAMAULIPAS;
+curp.ESTADO.TLAXCALA;
+curp.ESTADO.VERACRUZ;
+curp.ESTADO.YUCATAN;
+curp.ESTADO.ZACATECAS;
+```
+
 ## Licencia
 
 GPL-3.0 © [Israel Perales](https://www.israel-perales.com)
