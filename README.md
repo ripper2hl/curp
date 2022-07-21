@@ -74,16 +74,15 @@ let persona = curp.getPersona();
 persona.fechaNacimiento = '13-11-1953';
 ```
 
-### Constantes
 
-#### Genero 
+### Genero 
 
 ```js
 curp.GENERO.MASCULINO
 curp.GENERO.FEMENINO
 ```
 
-#### Estados
+### Estados
 ```js
 curp.ESTADO.TABASCO;
 curp.ESTADO.AGUASCALIENTES;
