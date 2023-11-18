@@ -1,6 +1,6 @@
 {
   "name": "curp",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Genera y valida el CURP (Clave Única de Registro de Población) mexicano.",
   "homepage": "",
   "author": {
