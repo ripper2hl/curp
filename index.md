@@ -4,39 +4,51 @@
 **CURP:**
 <input id="validarCurp" type="text" />
 
-<input id="validarBoton" type="button" value="Validar" />
+<button id="validarBoton">Validar</button>
 
-<script >
-var validarCurp = document.getElementById("validarCurp");
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var validarCurp = document.getElementById("validarCurp");
+    var validarBoton = document.getElementById("validarBoton");
 
-var validarBoton = document.getElementById("validarBoton");
-
-validarBoton.addEventListener("click", function(evt) {
-    evt.preventDefault();
-    alert(curp.validar(validarCurp.value));
+    validarBoton.addEventListener("click", function () {
+        alert(curp.validar(validarCurp.value));
+    });
 });
 </script>
 
-### Genera
-**Nombre**
+## Genera
+
+**Nombre:**
 <input id="nombre" type="text"/>
 
-**Apellido paterno**
+**Apellido paterno:**
 <input id="apellidoPaterno" type="text" />
 
-**Apellido materno**
+**Apellido materno:**
 <input id="apellidoMaterno" type="text" />
 
-**Estado**
+**Estado:**
 <input id="estado" type="text" />
 
-**Fecha de nacimiento**
+**Fecha de nacimiento:**
 <input id="fechaNacimiento" type="date" />
 
-**Sexo**
+**Sexo:**
 <input id="sexo" type="checkbox" />
 
-<input id="GenerarBoton" type="button" />
+<button id="GenerarBoton">Generar CURP</button>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var generarBoton = document.getElementById("GenerarBoton");
+
+    generarBoton.addEventListener("click", function () {
+        // Implementa la lógica para generar la CURP aquí
+    });
+});
+</script>
+
 
 ```markdown
 Syntax highlighted code block
