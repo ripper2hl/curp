@@ -44,10 +44,32 @@ document.addEventListener("DOMContentLoaded", function () {
     var generarBoton = document.getElementById("GenerarBoton");
 
     generarBoton.addEventListener("click", function () {
-        // Implementa la lógica para generar la CURP aquí
+        // Obtén la información de la persona desde los campos de entrada
+        var nombre = document.getElementById("nombre").value;
+        var apellidoPaterno = document.getElementById("apellidoPaterno").value;
+        var apellidoMaterno = document.getElementById("apellidoMaterno").value;
+        var estado = document.getElementById("estado").value;
+        var fechaNacimiento = document.getElementById("fechaNacimiento").value;
+        var sexo = document.getElementById("sexo").checked ? curp.GENERO.MASCULINO : curp.GENERO.FEMENINO;
+
+        // Crea un objeto persona con la información
+        var persona = curp.getPersona();
+        persona.nombre = nombre;
+        persona.apellidoPaterno = apellidoPaterno;
+        persona.apellidoMaterno = apellidoMaterno;
+        persona.genero = sexo;
+        persona.fechaNacimiento = fechaNacimiento;
+        persona.estado = estado; // Asegúrate de que este valor coincida con los valores posibles de curp.ESTADO
+
+        // Genera la CURP utilizando la biblioteca curp
+        var curpGenerada = curp.generar(persona);
+
+        // Muestra la CURP generada (esto puede ser un alert, console.log, o cualquier otra forma que prefieras)
+        alert("CURP Generada: " + curpGenerada);
     });
 });
 </script>
+
 
 
 ```markdown
