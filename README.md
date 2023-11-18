@@ -1,4 +1,4 @@
-# curp [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# curp [![NPM version][npm-image]][npm-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![Build status](https://github.com/ripper2hl/curp/actions/workflows/main.yml/badge.svg)](https://github.com/ripper2hl/curp/actions/workflows/main.yml)
 
 [![Join the chat at https://gitter.im/curpjs/community](https://badges.gitter.im/curpjs/community.svg)](https://gitter.im/curpjs/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -108,8 +108,6 @@ GPL-3.0 © [Israel Perales](https://www.israel-perales.com)
 
 [npm-image]: https://badge.fury.io/js/curp.svg
 [npm-url]: https://npmjs.org/package/curp
-[travis-image]: https://travis-ci.com/ripper2hl/curp.svg?branch=master
-[travis-url]: https://travis-ci.com/ripper2hl/curp
 [coveralls-image]: https://coveralls.io/repos/ripper2hl/curp/badge.svg
 [coveralls-url]: https://coveralls.io/r/ripper2hl/curp
 
