@@ -1,5 +1,7 @@
 # curp [![NPM version][npm-image]][npm-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![Build status](https://github.com/ripper2hl/curp/actions/workflows/main.yml/badge.svg)](https://github.com/ripper2hl/curp/actions/workflows/main.yml)
 
+[![](https://data.jsdelivr.com/v1/package/npm/curp/badge?style=rounded)](https://www.jsdelivr.com/package/npm/curp)
+
 [![Join the chat at https://gitter.im/curpjs/community](https://badges.gitter.im/curpjs/community.svg)](https://gitter.im/curpjs/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Genera y valida el CURP (Clave Única de Registro de Población) mexicano.
@@ -100,6 +102,11 @@ function validarCurp(curpString) {
   return curp.validar(curpString);
 }
 ```
+
+## Deja tu opinión en la [Google Play Store](https://play.google.com/store/apps/details?id=com.perales.curpbuscar)
+
+Tu apoyo cuenta. Descarga la aplicación creada con esta libreria y comparte tu experiencia dejando una reseña en la [Google Play Store](https://play.google.com/store/apps/details?id=com.perales.curpbuscar). ¡Gracias!
+
 
 ## Licencia
 
