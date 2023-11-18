@@ -1,4 +1,4 @@
-<script src="https://bundle.run/curp"></script>
+<script src="https://cdn.jsdelivr.net/npm/curp/lib/index.min.js"></script>
 ## Valida
 
 **CURP:**
