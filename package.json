@@ -1,6 +1,6 @@
 {
   "name": "curp",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Genera y valida el CURP (Clave Única de Registro de Población) mexicano.",
   "homepage": "",
   "author": {
@@ -69,7 +69,8 @@
   },
   "scripts": {
     "pretest": "eslint . --fix",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "postinstall": "echo '¡Gracias por instalar la libreria curp! Por favor, considera apoyarnos dejando una reseña en la Play Store y descargar nuestra app para Android: https://play.google.com/store/apps/details?id=com.perales.curpbuscar'"
   },
   "repository": "ripper2hl/curp",
   "jest": {
