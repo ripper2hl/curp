@@ -2,6 +2,8 @@ name: Node.js CI and Release
 
 on:
   push:
+    tags:
+      - '*'
     branches:
       - '*'
   pull_request:
