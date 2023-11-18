@@ -69,7 +69,7 @@
   },
   "scripts": {
     "pretest": "eslint . --fix",
-    "test": "jest --coverage",
+    "test": "jest",
     "coverage": "jest --coverage",
     "postinstall": "echo '¡Gracias por instalar la libreria curp! Por favor, considera apoyarnos dejando una reseña en la Play Store y descargar nuestra app para Android: https://play.google.com/store/apps/details?id=com.perales.curpbuscar'"
   },
