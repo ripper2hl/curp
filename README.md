@@ -103,9 +103,46 @@ function validarCurp(curpString) {
 }
 ```
 
-## Deja tu opinión en la [Google Play Store](https://play.google.com/store/apps/details?id=com.perales.curpbuscar)
+### Uso de Estados y Géneros para Formularios
 
-Tu apoyo cuenta. Descarga la aplicación creada con esta libreria y comparte tu experiencia dejando una reseña en la [Google Play Store](https://play.google.com/store/apps/details?id=com.perales.curpbuscar). ¡Gracias!
+#### Obtener lista de estados
+```js
+const estados = curp.getEstados();
+// Retorna un array de objetos { label, value }
+// Ejemplo:
+// [
+//   { label: "Aguascalientes", value: "AS" },
+//   { label: "Baja California", value: "BC" },
+//   ...
+// ]
+```
+
+#### Obtener lista de géneros
+```js
+const generos = curp.getGeneros();
+// Retorna un array de objetos { label, value }
+// Ejemplo:
+// [
+//   { label: "Femenino", value: "M" },
+//   { label: "Masculino", value: "H" },
+//   { label: "No Binario", value: "X" }
+// ]
+```
+
+#### Ejemplo de uso con HTML
+```html
+<select id="estado">
+  <option value="">Seleccione un estado...</option>
+</select>
+
+<script>
+  const select = document.getElementById('estado');
+  curp.getEstados().forEach(({ label, value }) => {
+    const option = new Option(label, value);
+    select.add(option);
+  });
+</script>
+```
 
 
 ## Licencia
