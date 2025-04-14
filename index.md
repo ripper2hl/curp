@@ -1,101 +1,131 @@
+# CURP - Generador y Validador de CURP Mexicano
+
 <script src="https://cdn.jsdelivr.net/npm/curp/lib/index.min.js"></script>
-## Valida
+
+## Validar CURP
 
 **CURP:**
-<input id="validarCurp" type="text" />
+<input id="validarCurp" type="text" placeholder="Ingresa tu CURP" />
 
 <button id="validarBoton">Validar</button>
+
+<div id="validarResultado" style="margin-top: 1rem; font-weight: bold;"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     var validarCurp = document.getElementById("validarCurp");
     var validarBoton = document.getElementById("validarBoton");
+    var validarResultado = document.getElementById("validarResultado");
 
     validarBoton.addEventListener("click", function () {
-        alert(curp.validar(validarCurp.value));
+        const esValido = curp.validar(validarCurp.value);
+        validarResultado.textContent = esValido
+            ? "✅ CURP válida"
+            : "❌ CURP inválida";
     });
 });
 </script>
 
-## Genera
+---
+
+## Generar CURP
 
 **Nombre:**
-<input id="nombre" type="text"/>
+<input id="nombre" type="text" placeholder="Ejemplo: Andrés Manuel" />
 
 **Apellido paterno:**
-<input id="apellidoPaterno" type="text" />
+<input id="apellidoPaterno" type="text" placeholder="Ejemplo: López" />
 
 **Apellido materno:**
-<input id="apellidoMaterno" type="text" />
+<input id="apellidoMaterno" type="text" placeholder="Ejemplo: Obrador" />
 
 **Estado:**
-<input id="estado" type="text" />
+<select id="estado">
+  <option value="">Seleccione un estado...</option>
+</select>
 
 **Fecha de nacimiento:**
 <input id="fechaNacimiento" type="date" />
 
-**Sexo:**
-<input id="sexo" type="checkbox" />
+**Género:**
+<select id="genero">
+  <option value="">Seleccione un género...</option>
+</select>
 
-<button id="GenerarBoton">Generar CURP</button>
+<button id="generarBoton">Generar CURP</button>
+
+<div id="generarResultado" style="margin-top: 1rem; font-weight: bold;"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    var generarBoton = document.getElementById("GenerarBoton");
+    var generarBoton = document.getElementById("generarBoton");
+    var generarResultado = document.getElementById("generarResultado");
+
+    // Llenar los combos de estados y géneros
+    const estadoSelect = document.getElementById("estado");
+    curp.getEstados().forEach(({ label, value }) => {
+        const option = new Option(label, value);
+        estadoSelect.add(option);
+    });
+
+    const generoSelect = document.getElementById("genero");
+    curp.getGeneros().forEach(({ label, value }) => {
+        const option = new Option(label, value);
+        generoSelect.add(option);
+    });
 
     generarBoton.addEventListener("click", function () {
         // Obtén la información de la persona desde los campos de entrada
-        var nombre = document.getElementById("nombre").value;
-        var apellidoPaterno = document.getElementById("apellidoPaterno").value;
-        var apellidoMaterno = document.getElementById("apellidoMaterno").value;
-        var estado = document.getElementById("estado").value;
-        var fechaNacimiento = document.getElementById("fechaNacimiento").value;
-        var sexo = document.getElementById("sexo").checked ? curp.GENERO.MASCULINO : curp.GENERO.FEMENINO;
-
-        // Crea un objeto persona con la información
-        var persona = curp.getPersona();
-        persona.nombre = nombre;
-        persona.apellidoPaterno = apellidoPaterno;
-        persona.apellidoMaterno = apellidoMaterno;
-        persona.genero = sexo;
-        persona.fechaNacimiento = fechaNacimiento;
-        persona.estado = estado; // Asegúrate de que este valor coincida con los valores posibles de curp.ESTADO
+        const persona = curp.getPersona();
+        persona.nombre = document.getElementById("nombre").value;
+        persona.apellidoPaterno = document.getElementById("apellidoPaterno").value;
+        persona.apellidoMaterno = document.getElementById("apellidoMaterno").value;
+        persona.estado = document.getElementById("estado").value;
+        persona.fechaNacimiento = document.getElementById("fechaNacimiento").value;
+        persona.genero = document.getElementById("genero").value;
 
         // Genera la CURP utilizando la biblioteca curp
-        var curpGenerada = curp.generar(persona);
-
-        // Muestra la CURP generada (esto puede ser un alert, console.log, o cualquier otra forma que prefieras)
-        alert("CURP Generada: " + curpGenerada);
+        try {
+            const curpGenerada = curp.generar(persona);
+            generarResultado.textContent = "✅ CURP Generada: " + curpGenerada;
+        } catch (error) {
+            generarResultado.textContent = "❌ Error: " + error.message;
+        }
     });
 });
 </script>
 
+---
 
+## Acerca de la Librería
 
-```markdown
-Syntax highlighted code block
+CURP es una librería que permite generar y validar la Clave Única de Registro de Población (CURP) mexicana. Es compatible con **Node.js**, **Angular**, **React**, y **JavaScript puro**.
 
-# Header 1
-## Header 2
-### Header 3
+### Instalación
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+#### npm
+```sh
+npm install --save curp
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+#### yarn
+```sh
+yarn add curp
+```
 
-### Jekyll Themes
+#### CDN
+```html
+<script src="https://cdn.jsdelivr.net/npm/curp/lib/index.min.js"></script>
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ripper2hl/curp/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+---
 
-### Support or Contact
+## Contribuciones
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+¡Las contribuciones son bienvenidas! Si encuentras un problema o tienes una idea para mejorar la librería, no dudes en abrir un issue o enviar un pull request.
+
+---
+
+## Licencia
+
+GPL-3.0 © [Israel Perales](https://www.israel-perales.com)
