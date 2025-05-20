@@ -81,7 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
         persona.apellidoPaterno = document.getElementById("apellidoPaterno").value;
         persona.apellidoMaterno = document.getElementById("apellidoMaterno").value;
         persona.estado = document.getElementById("estado").value;
-        persona.fechaNacimiento = document.getElementById("fechaNacimiento").value;
+        const fechaNacimientoInput = document.getElementById("fechaNacimiento").value;
+        const [year, month, day] = fechaNacimientoInput.split("-");
+        persona.fechaNacimiento = `${day}-${month}-${year}`;
         persona.genero = document.getElementById("genero").value;
 
         // Genera la CURP utilizando la biblioteca curp
