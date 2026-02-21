@@ -1,0 +1,7 @@
+# robots.txt para curp.israel-perales.com
+# Permitir el rastreo completo del sitio
+
+User-agent: *
+Allow: /
+
+Sitemap: https://curp.israel-perales.com/sitemap.xml

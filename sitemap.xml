@@ -1,0 +1,16 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in site.pages %}
+    {% unless page.url contains 'assets' or page.url contains 'feed' or page.url contains 'robots' or page.url contains 'sitemap' or page.url contains '404' %}
+    <url>
+      <loc>https://curp.israel-perales.com{{ page.url | remove: 'index.html' }}</loc>
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>{% if page.url == '/' or page.url == '/index.html' %}1.0{% else %}0.8{% endif %}</priority>
+    </url>
+    {% endunless %}
+  {% endfor %}
+</urlset>
