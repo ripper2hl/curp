@@ -177,3 +177,4 @@ GPL-3.0 © [Israel Perales](https://www.israel-perales.com)
 <a href="https://www.israel-perales.com/portafolio?ref=curp.israel-perales.com" target="_blank" rel="noopener" style="display: inline-block; padding: 0.7rem 1.8rem; border-radius: 6px; background-color: #fff; color: #1e272e; font-weight: bold; text-decoration: none; font-size: 1.05em;">🌐 Ver Portafolio Web</a>
 
 </div>
+<style> .site-footer { display: none !important; } </style>
