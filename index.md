@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <p>Consulta y busca información de cualquier código postal o colonia de México de forma rápida, ligera y completamente offline.</p>
 
 <p>
-  <a href="https://cp.israel-perales.com/?ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #159957; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">🌐 Versión Web</a>
+  <a href="https://cp.israel-perales.com/?ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #000; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">🌐 Versión Web</a>
   <a href="https://play.google.com/store/apps/details?id=com.perales.sepomex&hl=es&gl=mx&ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #159957; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">▶️ Google Play</a>
 </p>
 
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <p>Calculadora rápida y sencilla para estimar finiquitos y liquidaciones laborales en México basada en la ley actual.</p>
 
 <p>
-  <a href="https://finiquito.israel-perales.com/?ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #155799; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">🌐 Versión Web</a>
+  <a href="https://finiquito.israel-perales.com/?ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #000; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">🌐 Versión Web</a>
   <a href="https://play.google.com/store/apps/details?id=com.perales.finiquito&hl=es&gl=mx&ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #155799; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">▶️ Google Play</a>
 </p>
 
@@ -167,3 +167,13 @@ yarn add curp
 ## Licencia
 
 GPL-3.0 © [Israel Perales](https://www.israel-perales.com)
+
+<div style="background: linear-gradient(135deg, #1e272e, #155799); color: #ffffff; text-align: center; padding: 2rem; border-radius: 8px; margin-top: 2.5rem;">
+
+<p style="font-size: 1.3em; margin-bottom: 0.5rem;">👨‍💻 ¿Te interesa el código detrás de esto?</p>
+
+<p style="font-size: 1em; line-height: 1.6; max-width: 600px; margin: 0 auto 1.2rem auto;">Soy <strong>Israel Perales</strong>, Arquitecto de Software. Descubre cómo construyo plataformas empresariales, microservicios y más herramientas open source en mi portafolio.</p>
+
+<a href="https://www.israel-perales.com/portafolio?ref=curp.israel-perales.com" target="_blank" rel="noopener" style="display: inline-block; padding: 0.7rem 1.8rem; border-radius: 6px; background-color: #fff; color: #1e272e; font-weight: bold; text-decoration: none; font-size: 1.05em;">🌐 Ver Portafolio Web</a>
+
+</div>
