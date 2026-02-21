@@ -17,11 +17,15 @@ document.addEventListener("DOMContentLoaded", function () {
     var validarBoton = document.getElementById("validarBoton");
     var validarResultado = document.getElementById("validarResultado");
 
+    var promoHTML = '<br><br><span style="font-weight: normal; font-size: 0.95em;">🎉 <strong>¡Trámite listo!</strong> ¿Te gustan los juegos clásicos? Relájate un rato con <a href="https://loteria.israel-perales.com/?ref=curp.israel-perales.com" target="_blank" rel="noopener" style="color: #159957; text-decoration: underline; font-weight: bold;">Tu Lotería Mexicana</a>.</span>';
+
     validarBoton.addEventListener("click", function () {
         const esValido = curp.validar(validarCurp.value);
-        validarResultado.textContent = esValido
-            ? "✅ CURP válida"
-            : "❌ CURP inválida";
+        if (esValido) {
+            validarResultado.innerHTML = "✅ CURP válida" + promoHTML;
+        } else {
+            validarResultado.innerHTML = "❌ CURP inválida";
+        }
     });
 });
 </script>
@@ -87,15 +91,47 @@ document.addEventListener("DOMContentLoaded", function () {
         persona.genero = document.getElementById("genero").value;
 
         // Genera la CURP utilizando la biblioteca curp
+        var promoHTML = '<br><br><span style="font-weight: normal; font-size: 0.95em;">🎉 <strong>¡Trámite listo!</strong> ¿Te gustan los juegos clásicos? Relájate un rato con <a href="https://loteria.israel-perales.com/?ref=curp.israel-perales.com" target="_blank" rel="noopener" style="color: #159957; text-decoration: underline; font-weight: bold;">Tu Lotería Mexicana</a>.</span>';
+
         try {
             const curpGenerada = curp.generar(persona);
-            generarResultado.textContent = "✅ CURP Generada: " + curpGenerada;
+            generarResultado.innerHTML = "✅ CURP Generada: " + curpGenerada + promoHTML;
         } catch (error) {
-            generarResultado.textContent = "❌ Error: " + error.message;
+            generarResultado.innerHTML = "❌ Error: " + error.message;
         }
     });
 });
 </script>
+
+---
+
+## 🛠️ Más herramientas útiles para México
+
+<blockquote style="border-left: 4px solid #159957; padding: 1rem 1.2rem; margin: 1.5rem 0; background: #f6f8fa; border-radius: 4px;">
+
+<h3 style="margin-top: 0;">📮 Tu código postal para México</h3>
+
+<p>Consulta y busca información de cualquier código postal o colonia de México de forma rápida, ligera y completamente offline.</p>
+
+<p>
+  <a href="https://cp.israel-perales.com/?ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #159957; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">🌐 Versión Web</a>
+  <a href="https://play.google.com/store/apps/details?id=com.perales.sepomex&hl=es&gl=mx&ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #159957; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">▶️ Google Play</a>
+</p>
+
+</blockquote>
+
+<blockquote style="border-left: 4px solid #155799; padding: 1rem 1.2rem; margin: 1.5rem 0; background: #f6f8fa; border-radius: 4px;">
+
+<h3 style="margin-top: 0;">💼 Tu Finiquito Mexicano</h3>
+
+<p>Calculadora rápida y sencilla para estimar finiquitos y liquidaciones laborales en México basada en la ley actual.</p>
+
+<p>
+  <a href="https://finiquito.israel-perales.com/?ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #155799; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">🌐 Versión Web</a>
+  <a href="https://play.google.com/store/apps/details?id=com.perales.finiquito&hl=es&gl=mx&ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #155799; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">▶️ Google Play</a>
+</p>
+
+</blockquote>
 
 ---
 
