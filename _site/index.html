@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>CURP - Generador y Validador de CURP Mexicano | curp</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="CURP - Generador y Validador de CURP Mexicano" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Genera y valida el CURP (Clave Única de Registro de Población) mexicano." />
+<meta property="og:description" content="Genera y valida el CURP (Clave Única de Registro de Población) mexicano." />
+<link rel="canonical" href="http://0.0.0.0:4000/" />
+<meta property="og:url" content="http://0.0.0.0:4000/" />
+<meta property="og:site_name" content="curp" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CURP - Generador y Validador de CURP Mexicano" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Genera y valida el CURP (Clave Única de Registro de Población) mexicano.","headline":"CURP - Generador y Validador de CURP Mexicano","name":"curp","url":"http://0.0.0.0:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=b39a55ed080c5101014a5d61dc8594ac95cf6c71">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">CURP - Generador y Validador de CURP Mexicano</h1>
+      <h2 class="project-tagline">Genera y valida el CURP (Clave Única de Registro de Población) mexicano.</h2>
+      
+        <a href="https://github.com/ripper2hl/curp" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="curp---generador-y-validador-de-curp-mexicano">CURP - Generador y Validador de CURP Mexicano</h1>
+
+<script src="https://cdn.jsdelivr.net/npm/curp/lib/index.min.js"></script>
+
+<h2 id="validar-curp">Validar CURP</h2>
+
+<p><strong>CURP:</strong>
+<input id="validarCurp" type="text" placeholder="Ingresa tu CURP" /></p>
+
+<p><button id="validarBoton">Validar</button></p>
+
+<div id="validarResultado" style="margin-top: 1rem; font-weight: bold;"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var validarCurp = document.getElementById("validarCurp");
+    var validarBoton = document.getElementById("validarBoton");
+    var validarResultado = document.getElementById("validarResultado");
+
+    validarBoton.addEventListener("click", function () {
+        const esValido = curp.validar(validarCurp.value);
+        validarResultado.textContent = esValido
+            ? "✅ CURP válida"
+            : "❌ CURP inválida";
+    });
+});
+</script>
+
+<hr />
+
+<h2 id="generar-curp">Generar CURP</h2>
+
+<p><strong>Nombre:</strong>
+<input id="nombre" type="text" placeholder="Ejemplo: Andrés Manuel" /></p>
+
+<p><strong>Apellido paterno:</strong>
+<input id="apellidoPaterno" type="text" placeholder="Ejemplo: López" /></p>
+
+<p><strong>Apellido materno:</strong>
+<input id="apellidoMaterno" type="text" placeholder="Ejemplo: Obrador" /></p>
+
+<p><strong>Estado:</strong>
+<select id="estado">
+  <option value="">Seleccione un estado...</option>
+</select></p>
+
+<p><strong>Fecha de nacimiento:</strong>
+<input id="fechaNacimiento" type="date" /></p>
+
+<p><strong>Género:</strong>
+<select id="genero">
+  <option value="">Seleccione un género...</option>
+</select></p>
+
+<p><button id="generarBoton">Generar CURP</button></p>
+
+<div id="generarResultado" style="margin-top: 1rem; font-weight: bold;"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var generarBoton = document.getElementById("generarBoton");
+    var generarResultado = document.getElementById("generarResultado");
+
+    // Llenar los combos de estados y géneros
+    const estadoSelect = document.getElementById("estado");
+    curp.getEstados().forEach(({ label, value }) => {
+        const option = new Option(label, value);
+        estadoSelect.add(option);
+    });
+
+    const generoSelect = document.getElementById("genero");
+    curp.getGeneros().forEach(({ label, value }) => {
+        const option = new Option(label, value);
+        generoSelect.add(option);
+    });
+
+    generarBoton.addEventListener("click", function () {
+        // Obtén la información de la persona desde los campos de entrada
+        const persona = curp.getPersona();
+        persona.nombre = document.getElementById("nombre").value;
+        persona.apellidoPaterno = document.getElementById("apellidoPaterno").value;
+        persona.apellidoMaterno = document.getElementById("apellidoMaterno").value;
+        persona.estado = document.getElementById("estado").value;
+        const fechaNacimientoInput = document.getElementById("fechaNacimiento").value;
+        const [year, month, day] = fechaNacimientoInput.split("-");
+        persona.fechaNacimiento = `${day}-${month}-${year}`;
+        persona.genero = document.getElementById("genero").value;
+
+        // Genera la CURP utilizando la biblioteca curp
+        try {
+            const curpGenerada = curp.generar(persona);
+            generarResultado.textContent = "✅ CURP Generada: " + curpGenerada;
+        } catch (error) {
+            generarResultado.textContent = "❌ Error: " + error.message;
+        }
+    });
+});
+</script>
+
+<hr />
+
+<h2 id="️-más-herramientas-útiles-para-méxico">🛠️ Más herramientas útiles para México</h2>
+
+<blockquote style="border-left: 4px solid #159957; padding: 1rem 1.2rem; margin: 1.5rem 0; background: #f6f8fa; border-radius: 4px;">
+
+<h3 style="margin-top: 0;">📮 Tu código postal para México</h3>
+
+<p>Consulta y busca información de cualquier código postal o colonia de México de forma rápida, ligera y completamente offline.</p>
+
+<p>
+  <a href="https://cp.israel-perales.com/?ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #159957; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">🌐 Versión Web</a>
+  <a href="https://play.google.com/store/apps/details?id=com.perales.sepomex&amp;hl=es&amp;gl=mx&amp;ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #159957; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">▶️ Google Play</a>
+</p>
+
+</blockquote>
+
+<blockquote style="border-left: 4px solid #155799; padding: 1rem 1.2rem; margin: 1.5rem 0; background: #f6f8fa; border-radius: 4px;">
+
+<h3 style="margin-top: 0;">💼 Tu Finiquito Mexicano</h3>
+
+<p>Calculadora rápida y sencilla para estimar finiquitos y liquidaciones laborales en México basada en la ley actual.</p>
+
+<p>
+  <a href="https://finiquito.israel-perales.com/?ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #155799; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">🌐 Versión Web</a>
+  <a href="https://play.google.com/store/apps/details?id=com.perales.finiquito&amp;hl=es&amp;gl=mx&amp;ref=curp.israel-perales.com" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; color: #ffffff !important; background-color: #155799; margin-right: 0.5rem; margin-bottom: 0.5rem;" target="_blank" rel="noopener">▶️ Google Play</a>
+</p>
+
+</blockquote>
+
+<hr />
+
+<h2 id="acerca-de-la-librería">Acerca de la Librería</h2>
+
+<p>CURP es una librería que permite generar y validar la Clave Única de Registro de Población (CURP) mexicana. Es compatible con <strong>Node.js</strong>, <strong>Angular</strong>, <strong>React</strong>, y <strong>JavaScript puro</strong>.</p>
+
+<h3 id="instalación">Instalación</h3>
+
+<h4 id="npm">npm</h4>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> curp
+</code></pre></div></div>
+
+<h4 id="yarn">yarn</h4>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn add curp
+</code></pre></div></div>
+
+<h4 id="cdn">CDN</h4>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/curp/lib/index.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="contribuciones">Contribuciones</h2>
+
+<p>¡Las contribuciones son bienvenidas! Si encuentras un problema o tienes una idea para mejorar la librería, no dudes en abrir un issue o enviar un pull request.</p>
+
+<hr />
+
+<h2 id="licencia">Licencia</h2>
+
+<p>GPL-3.0 © <a href="https://www.israel-perales.com">Israel Perales</a></p>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/ripper2hl/curp">curp</a> is maintained by <a href="https://github.com/ripper2hl">ripper2hl</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
