@@ -103,6 +103,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<p style="font-size: 0.8em; color: #6a737d; margin-top: 1.5rem; line-height: 1.5;">⚠️ <strong>Aviso técnico:</strong> Esta página es una demostración de la librería open source <a href="https://www.npmjs.com/package/curp" style="color: #6a737d; text-decoration: underline;" target="_blank" rel="noopener">curp</a>. Los cálculos se realizan localmente en el cliente mediante algoritmos de generación lógica y no consultan bases de datos gubernamentales. Para obtener un documento con validez oficial, por favor acuda a la <a href="https://www.gob.mx/curp/" style="color: #6a737d; text-decoration: underline;" target="_blank" rel="noopener">plataforma de RENAPO</a>.</p>
+
 ---
 
 ## 🛠️ Más herramientas útiles para México
