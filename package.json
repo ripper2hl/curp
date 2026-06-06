@@ -79,7 +79,10 @@
     "test": "jest",
     "coverage": "jest --coverage"
   },
-  "repository": "ripper2hl/curp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ripper2hl/curp.git"
+  },
   "jest": {
     "testEnvironment": "node"
   },
