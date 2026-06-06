@@ -1,11 +1,15 @@
 declare namespace curp {
+  /**
+   * Datos necesarios para la generacion de un CURP.
+   * Solo apellidoMaterno es opcional.
+   */
   interface Persona {
-    nombre?: string;
-    apellidoPaterno?: string;
+    nombre: string;
+    apellidoPaterno: string;
     apellidoMaterno?: string;
-    genero?: string;
-    estado?: string;
-    fechaNacimiento?: string;
+    genero: string;
+    estado: string;
+    fechaNacimiento: string;
   }
 
   interface CatalogoItem {
@@ -14,74 +18,56 @@ declare namespace curp {
   }
 
   interface GeneroCatalogo {
-    readonly [key: string]: string;
+    readonly MASCULINO: 'H';
+    readonly FEMENINO: 'M';
+    readonly NO_BINARIO: 'X';
   }
 
   interface EstadoCatalogo {
-    readonly [key: string]: string;
+    readonly AGUASCALIENTES: 'AS';
+    readonly BAJA_CALIFORNIA: 'BC';
+    readonly BAJA_CALIFORNIA_SUR: 'BS';
+    readonly CAMPECHE: 'CC';
+    readonly COAHUILA: 'CL';
+    readonly COLIMA: 'CM';
+    readonly CHIAPAS: 'CS';
+    readonly CHIHUAHUA: 'CH';
+    readonly DISTRITO_FEDERAL: 'DF';
+    readonly CDMX: 'DF';
+    readonly DURANGO: 'DG';
+    readonly GUANAJUATO: 'GT';
+    readonly GUERRERO: 'GR';
+    readonly HIDALGO: 'HG';
+    readonly JALISCO: 'JC';
+    readonly ESTADO_DE_MEXICO: 'MC';
+    readonly NO_ESPECIFICADO: 'NE';
+    readonly MICHOACAN: 'MN';
+    readonly MORELOS: 'MS';
+    readonly NAYARIT: 'NT';
+    readonly NUEVO_LEON: 'NL';
+    readonly OAXACA: 'OC';
+    readonly PUEBLA: 'PL';
+    readonly QUERETARO: 'QT';
+    readonly QUINTANA_ROO: 'QR';
+    readonly SAN_LUIS_POTOSI: 'SP';
+    readonly SINALOA: 'SL';
+    readonly SONORA: 'SR';
+    readonly TABASCO: 'TC';
+    readonly TAMAULIPAS: 'TS';
+    readonly TLAXCALA: 'TL';
+    readonly VERACRUZ: 'VZ';
+    readonly YUCATAN: 'YN';
+    readonly ZACATECAS: 'ZS';
   }
 }
 
-/**
- * CURP (Clave Única de Registro de Población) es una función que proporciona
- * métodos para validar, generar y obtener información relacionada con el CURP
- * en México. Incluye funciones para validar el formato del CURP, generar un
- * CURP a partir de los datos de una persona, y obtener catálogos de estados y
- * géneros. Además, proporciona catálogos predefinidos para géneros y estados
- * que se utilizan en la generación y validación del CURP.
- */
 declare const curp: {
-  /**
- * Valida que el curp cumpla con el formato y el digito verificador.
- * @param {string} curpToValidate
- * @returns {boolean} true de ser valido, false de ser invalido.
- */
   validar(curpToValidate: string): boolean;
-
-  /**
-   * Genera un objeto de tipo `Persona` como punto de partida para generar el CURP.
-   * @returns {curp.Persona} Un objeto de tipo `Persona` con campos vacíos.
-   */
   getPersona(): curp.Persona;
-
-  /**
-   * Genera el CURP a partir de los datos de una persona.
-   * @param {curp.Persona} persona - El objeto de tipo `Persona` con los datos necesarios.
-   * @returns {string} El CURP generado.
-   */
   generar(persona: curp.Persona): string;
-
-  /**
- * Obtiene una lista de los estados con sus nombres capitalizados y los valores
- * correspondientes. Utiliza la función `capitalizeWords` para asegurar que los
- * nombres de los estados estén en formato adecuado y los ordena alfabéticamente.
- *
- * @returns {Array<curp.CatalogoItem>} Una lista de objetos con las propiedades `label` y `value` para cada estado,
- *                         ordenada alfabéticamente por el label.
- */
   getEstados(): Array<curp.CatalogoItem>;
-
-  /**
- * Obtiene una lista de los géneros con sus etiquetas y valores
- * correspondientes. Los ordena alfabéticamente por etiqueta.
- *
- * @returns {Array<curp.CatalogoItem>} Una lista de objetos con las propiedades `label` y `value` para cada género,
- *                         ordenada alfabéticamente por el label.
- */
   getGeneros(): Array<curp.CatalogoItem>;
-
-  /**
-   * Catálogo de géneros disponibles para la generación del CURP. Cada clave representa un género y su valor es el código correspondiente.
-   * Por ejemplo, "H" para Hombre, "M" para Mujer, y "X" para No Binario.
-   * Este catálogo se utiliza para validar y generar el CURP correctamente según el género seleccionado.
-   */
   GENERO: curp.GeneroCatalogo;
-
-  /**
-   * Catálogo de estados disponibles para la generación del CURP. Cada clave representa un estado y su valor es el código correspondiente.
-   * Por ejemplo, "AS" para Aguascalientes, "BC" para Baja California, etc.
-   * Este catálogo se utiliza para validar y generar el CURP correctamente según el estado seleccionado.
-   */
   ESTADO: curp.EstadoCatalogo;
 };
 
